@@ -17,6 +17,7 @@ const CoinsList = () => {
 
   return (
     <div className="coin-container" style={({ backgroundColor: theme.background, color: theme.foreground })}>
+      <h1>Trending Coins</h1>
       {coins.data.length > 0 &&
         coins.data.map((coin) => {
           console.log(coin.id)

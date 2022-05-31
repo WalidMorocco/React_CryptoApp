@@ -231,3 +231,31 @@ a:active { text-decoration: none; color: inherit; font-weight: bold;}
   top: 20vh;
   left: calc(50% - 15rem);
 }
+
+.coin h2 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.coin-excerpt {
+  padding: 0.25rem 0.25rem;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 7px;
+}
+
+.coins-list .coin-excerpt + .coin-excerpt {
+  margin-top: 0.5rem;
+}
+
+.coins-container.disabled {
+  opacity: 0.5;
+}
+
+.coin-excerpt h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+p.coin-content {
+  margin-top: 10px;
+}

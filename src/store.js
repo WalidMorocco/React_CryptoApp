@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import coinReducer from './coinsSlice';
+import coinReducer from './cartSlice';
 
 export default configureStore({
     reducer: {

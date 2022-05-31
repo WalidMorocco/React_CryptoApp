@@ -6,9 +6,11 @@ import App from './App';
 import CoinDetail from './components/coins/CoinDetail';
 import CoinsList from './components/coins/CoinsList';
 import RouteNotFound from './components/RouteNotFound';
-import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
-import cartReducer from './coinsSlice'
+
+import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
+
+import cartReducer from './cartSlice'
 import store from './store'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -33,7 +35,10 @@ root.render(
             <Route
               index
               element={
-                <div className="flex-centered">This is the home screen</div>
+                <div >
+                  <h1>Welcome to your Crypto App.</h1>
+                  <p>Here you can view and save your coins.</p>
+                </div>
               }
             />
             <Route path="coins" element={<CoinsList />} />

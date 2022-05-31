@@ -1,22 +1,22 @@
-import React from 'react'
 import { useSelector } from 'react-redux'
+import React, { Component } from 'react';
+import { CSVLink } from "react-csv";
 
 export const AddedCoinsList = () => {
-  const coins = useSelector(state => state.coins)
+  const coins = useSelector(state => state.coin)
 
-  const renderedCoins = coins?.map(coin => (
+  console.log(coins)
+  const renderedCoins = coins.cartItems.map(coin => (
     <article className="coin-excerpt" key={coin.id}>
-      <h3>{coin.title}</h3>
-      <p className="coin-content">{coin.content.substring(0, 100)}</p>
+      <h3>{coin.name}</h3>
+      <p>{coin.market_data.price_usd}</p>
     </article>
   ))
 
-  console.log({});
   return (
-    <section className="coins-list">
+    <section className="post-list">
       <h2>Coins</h2>
-      {renderedCoins}
-      <h3>Are you sure you want to add this coins to your account?</h3>
+      <h3>{renderedCoins}</h3>
     </section>
   )
 }
