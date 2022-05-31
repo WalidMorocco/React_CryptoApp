@@ -11,7 +11,7 @@ const CoinDetail = () => {
 
   const onDismissModal = () => {
     setShowModal(false);
-}
+  }
 
   const navigate = useNavigate();
   const { coinId } = useParams();
@@ -55,7 +55,7 @@ const CoinDetail = () => {
         style={{ alignItems: 'flex-end', marginTop: '15px' }}
         onClick={() => setShowModal(true)}
       >
-        Go back
+        Add to watchlist
       </button>
       {showModal && (
         <div id="first-child">

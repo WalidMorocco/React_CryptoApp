@@ -1,13 +1,17 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { AddedCoinsList } from './coins/AddedCoinsList'
+import { AddCoin } from './coins/AddCoin'
 
 export const Modal = (props) => {
     const rootModalElement = document.getElementById('root-modal');
 
     return ReactDOM.createPortal(
         <>
+        
         <div className="modal">
-            <p>Did you complete this task?</p>
+            <AddCoin />
+            <AddedCoinsList />
             <button
             onClick={() => {
                 props.dismissModal();
