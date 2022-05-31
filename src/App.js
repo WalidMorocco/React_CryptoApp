@@ -1,24 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import { Layout } from './components/Layout';
+import {ThemeContext, themes} from './context/themeContext';
+import React, {useState} from 'react';
+import ToggleSwitch from './components/ToggleSwitch';
+import Navbar from './components/Navbar';
 
 function App() {
+
+  const [theme, setTheme] = useState(themes);
+
+  const toggleTheme = () => {
+    setTheme((previousThemeValue) => 
+      previousThemeValue === themes.dark ? themes.light : themes.dark
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Provider value={{ theme: theme }}>  
+      <div>
+
+        <div className='toggle'>
+          <div>
+            <p className='colorText'>Light/Dark</p>
+            <ToggleSwitch onToggle={toggleTheme}/>
+          </div>                 
+        </div>
+
+        <div className='navbar'>
+          <Navbar/>
+        </div>
+        
+        <div className="App" style={{ backgroundColor: theme.background, color: theme.foreground }}>
+          <Layout />
+        </div>
+        
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
